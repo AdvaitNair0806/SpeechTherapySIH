@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supervisor Dashboard</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <h2>Therapy<span class="danger">Flow</span></h2>
+          </div>
+        </div>
+
+      </aside>
+
+      <main>
+        <h1>Supervisor Dashboard</h1>
+
+        <div class="date">
+          <input type="date" />
+        </div>
+
+        <div class="insights">
+          <!-- Patients -->
+          <div class="sales">
+            <span class="material-icons-sharp"> analytics </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Patients</h3>
+                <h1>25</h1>
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+          <!-- Therapists -->
+          <div class="expenses">
+            <span class="material-icons-sharp"> bar_chart </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Therapists</h3>
+                <h1>45</h1>
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+
+          <!-- Sessions -->
+          <div class="income">
+            <span class="material-icons-sharp"> stacked_line_chart </span>
+            <div class="middle">
+              <div class="left">
+                <h3>Sessions</h3>
+                <h1>10</h1>
+              </div>
+            </div>
+            <small class="text-muted"> Last 24 hours </small>
+          </div>
+        </div>
+
+        <div class="recent-orders">
+          <h2>Recent Sessions</h2>
+          <table id="recent-orders--table">
+            <thead>
+              <tr>
+                <th>PatientName</th>
+                <th>TherapistName</th>
+                <th>SessionTime</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <!-- Add tbody here | JS insertion -->
+          </table>
+          <a href="#">Show All</a>
+        </div>
+      </main>
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="Table1.js"></script>
+    <script src="DashBoard1.js"></script>
+  </body>
+</html>

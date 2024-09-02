@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(122, 150, 154);
+  background: radial-gradient(circle, rgba(122, 150, 154, 1) 31%, rgba(18, 172, 142, 1) 100%);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 420px;
+    background: rgba(0, 0, 0, 0.5); /* Slight background color for contrast */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(9px);
+    color: white;
+    border-radius: 13px;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.google-btn,
+.apple-btn {
+    width: 100%; /* Full width for buttons */
+    height: 45px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text and icon */
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.google-btn:hover,
+.apple-btn:hover {
+    transform: scale(1.05);
+}
+
+i[class^='bx'] {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.container .form-input {
+    position: relative;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.form-input input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 1rem;
+    color: white;
+    padding: 0 2rem 0 1rem;
+}
+
+.form-input input::placeholder {
+    color: white;
+}
+
+.bx {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: black;
+    font-weight: 550;
+    transition: transform 0.4s ease-in-out;
+}
+
+.container .btn:hover {
+    transform: scale(1.05);
+}
+
+.login-link p a {
+    color: white;
+    font-weight: 500;
+}
+
+.login-link p a:hover {
+    text-decoration: underline;
+}
+
+.container .login-link {
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 1rem 0 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .social-login {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-input input {
+        font-size: 0.875rem;
+        padding: 0 1.5rem 0 0.75rem;
+    }
+
+    .container .btn {
+        font-size: 0.875rem;
+    }
+
+    .login-link {
+        font-size: 0.75rem;
+    }
+}
+/* Add styles for the password toggle button */
+.show-password-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none; /* Initially hidden */
+}
+
+.show-password-btn.visible {
+    display: block; /* Show button when needed */
+}
+
+.show-password-btn:hover {
+    color: #ddd;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 1rem;
+    color: white;
+    padding: 0 2rem 0 1rem;
+}
+/* Spinner Styles */
+#loading {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 100vh;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+#loading .spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2); /* Light border */
+    border-left: 8px solid white; /* Colored border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto; /* Center spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapiDoc</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: rgb(122, 150, 154);
+            background: radial-gradient(circle, rgba(122, 150, 154, 1) 31%, rgba(18, 172, 142, 1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .appointment-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .appointment-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        input[type="time"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #34a0a4;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 160, 164, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #34a0a4;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #2b908b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            background-color: #267a75;
+        }
+
+        button a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        @media (max-width: 600px) {
+            .appointment-form {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            button {
+                padding: 14px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="date"],
+            input[type="time"],
+            textarea,
+            select {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<form id="appointmentForm" class="appointment-form">
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Your Phone</label>
+        <input type="text" id="phone" name="phone" placeholder="Your Phone" required>
+    </div>
+
+    <div class="form-group">
+        <label for="date">Appointment Date</label>
+        <input type="date" id="date" name="date" placeholder="Appointment Date" required>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Select Age</label>
+        <select id="age" name="age" required>
+            <option value="" disabled selected>Select Age</option>
+            <option value="Under 18">Under 18</option>
+            <option value="18-30">18-30</option>
+            <option value="31-50">31-50</option>
+            <option value="51-70">51-70</option>
+            <option value="71 and above">71 and above</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="location">Your Location</label>
+        <select id="location" name="location" required>
+            <option value="" disabled selected>Your Location</option>
+            <option value="Location 1">Hyderabad</option>
+            <option value="Location 2">Chennai</option>
+            <option value="Location 3">Delhi</option>
+            <option value="Location 4">Ahmedabad</option>
+            <option value="Location 5">Kolkata</option>
+            <option value="Location 6">Banglore</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Message (Optional)</label>
+        <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
+    </div>
+
+    <button type="submit">Make an Appointment</button>
+</form>
+
+<script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Simulate form submission
+        setTimeout(function() {
+            alert('Appointment successful');
+            // Optionally, clear the form fields after submission
+            document.getElementById('appointmentForm').reset();
+        }, 500); // Simulate a delay for form submission
+    });
+</script>
+
+</body>
+</html>
